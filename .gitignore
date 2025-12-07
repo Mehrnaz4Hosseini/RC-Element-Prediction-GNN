@@ -1,7 +1,5 @@
 .DS_Store
 __pycache__/
 .env
-Results
-output
-results.xlsx
-results1.xlsx
+data
+1_homogeneous
