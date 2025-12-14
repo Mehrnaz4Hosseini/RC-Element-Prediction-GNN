@@ -1,0 +1,88 @@
+# Base configuration for RC element prediction
+project:
+  name: "rc_heterogeneous_gnn"
+  seed: 42
+
+data:
+  # Data paths
+  train_dir: "data/train"
+  test_dir: "data/test"
+  
+  # File naming patterns (your exact format)
+  file_patterns:
+    edge: "Edge-{sample_name}.xlsx"
+    feature: "Feature-{sample_name}_english.xlsx"  # Single file with Ele_Type column
+    label: "Label-{sample_name}.xlsx"
+  
+  # Node types based on Ele_Type column
+  node_types: ["column", "beam"]
+  
+  # Column configurations
+  columns:
+    # Feature file columns
+    element_name: "Element_Name"
+    element_type: "Ele_Type"  # Binary: 0=column, 1=beam
+    source_node: "Source"     # Edge file
+    target_node: "Target"     # Edge file
+    
+    # Label file columns
+    label_element_name: "Element Name"
+    label_width: "Width (b)"
+    label_height: "Height (h)"
+
+  # Feature columns to use (from your list)
+  feature_columns:
+    - "Structural_System"
+    - "Opening_Status"
+    - "Height_Difference"
+    - "Roof_Area_Difference_Excluding_Roof"
+    - "Relative_to_Horizontal_Axis"
+    - "Relative_to_Vertical_Axis"
+    - "Beam_Arrangement"
+    - "Width_to_Length_Ratio"
+    - "Number_of_Horizontal_Frames"
+    - "Number_of_Vertical_Frames"
+    - "Frame_Ratio_X_to_Y"
+    - "Structure_Height"
+    - "Number_of_Floors"
+    - "Earthquake_Coefficient"
+    - "Allowable_Drift"
+    - "Beam_Concrete_Compressive_Strength"
+    - "Column_Concrete_Compressive_Strength"
+    - "Dynamic_Analysis"
+    - "Static_Analysis"
+    - "X1"
+    - "Y1"
+    - "Z1"
+    - "X2"
+    - "Y2"
+    - "Z2"
+    - "Length"
+    - "Angle"
+    - "Story"
+    - "Boundary"
+    - "Alignment"
+    - "GravityForce"
+    - "EX"
+    - "EY"
+    - "CMX"
+    - "CRX"
+    - "DeltaX"
+    - "CMY"
+    - "CRY"
+    - "DeltaY"
+    - "CRXi"
+    - "CRYi"
+
+training:
+  epochs: 100
+  batch_size: 32
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  patience: 20
+  
+  # Target columns (what to predict)
+  target_columns: ["Width (b)", "Height (h)"]
+  
+  # Node type for prediction
+  # target_node_type: "beam"  # We'll predict for both, but specify primary
