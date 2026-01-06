@@ -1,36 +1,38 @@
 # Base configuration for RC element prediction
 project:
-  name: "rc_heterogeneous_gnn"
+  name: "rc-element-prediction"
   seed: 42
 
 data:
-  # Data paths
+  # Data paths (Relative to project root)
   train_dir: "data/train"
   test_dir: "data/test"
   
-  # File naming patterns (your exact format)
+  # Note: The code now uses fuzzy matching (glob) to handle variable names
+  # like "Edge-ali hoseini.xlsx" or "Feature-barati_english.xlsx"
   file_patterns:
-    edge: "Edge-{sample_name}.xlsx"
-    feature: "Feature-{sample_name}_english.xlsx"  # Single file with Ele_Type column
-    label: "Label-{sample_name}.xlsx"
+    edge_prefix: "Edge"
+    feature_suffix: "*english.xlsx" # Ensures we get the english version
+    label_prefix: "Label"
   
   # Node types based on Ele_Type column
-  node_types: ["column", "beam"]
+  node_types: 
+    column: 0
+    beam: 1
   
   # Column configurations
   columns:
     # Feature file columns
-    element_name: "Element_Name"
-    element_type: "Ele_Type"  # Binary: 0=column, 1=beam
-    source_node: "Source"     # Edge file
-    target_node: "Target"     # Edge file
+    element_name: "Name"       # Changed from Element_Name
+    element_type: "Ele_Type"   # Binary: 0=column, 1=beam
+    source_node: "Source"      # Edge file
+    target_node: "Target"      # Edge file
     
     # Label file columns
-    label_element_name: "Element Name"
-    label_width: "Width (b)"
-    label_height: "Height (h)"
+    label_width: "Width"       # Changed from Width (b)
+    label_height: "Height"     # Changed from Height (h)
 
-  # Feature columns to use (from your list)
+  # Feature columns to use
   feature_columns:
     - "Structural_System"
     - "Opening_Status"
@@ -81,8 +83,5 @@ training:
   weight_decay: 0.0001
   patience: 20
   
-  # Target columns (what to predict)
-  target_columns: ["Width (b)", "Height (h)"]
-  
-  # Node type for prediction
-  # target_node_type: "beam"  # We'll predict for both, but specify primary
+  # Target columns (Mapped to updated labels)
+  target_columns: ["Width", "Height"]
