@@ -7,6 +7,7 @@ data:
   # Data paths (Relative to project root)
   train_dir: "data/train"
   test_dir: "data/test"
+  pe_dim: 8  # Laplacian PE
   
   # Note: The code now uses fuzzy matching (glob) to handle variable names
   # like "Edge-ali hoseini.xlsx" or "Feature-barati_english.xlsx"
@@ -20,17 +21,14 @@ data:
     column: 0
     beam: 1
   
-  # Column configurations
   columns:
-    # Feature file columns
-    element_name: "Name"       # Changed from Element_Name
-    element_type: "Ele_Type"   # Binary: 0=column, 1=beam
-    source_node: "Source"      # Edge file
-    target_node: "Target"      # Edge file
-    
-    # Label file columns
-    label_width: "Width"       # Changed from Width (b)
-    label_height: "Height"     # Changed from Height (h)
+    element_name: "Element_Name"
+    label_element_name: "Element Name"
+    element_type: "Ele_Type"
+    source_node: "Source"
+    target_node: "Target"
+    label_width: "Width (b)"
+    label_height: "Height (h)" 
 
   # Feature columns to use
   feature_columns:

@@ -28,7 +28,7 @@ class HeteroDataLoader:
         # Mappings pulled directly from the updated YAML
         cols = self.config.get("data", {}).get("columns", {})
 
-        self.element_name_col = cols.get("element_name", "Name")
+        self.element_name_col = cols.get("element_name", "Element_Name")
         self.element_type_col = cols.get("element_type", "Ele_Type")
         self.source_col = cols.get("source_node", "Source")
         self.target_col = cols.get("target_node", "Target")
