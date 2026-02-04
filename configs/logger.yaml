@@ -1,0 +1,56 @@
+logger:
+  # Global logging level
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  
+  # Enable/disable colored output
+  use_colors: true
+  
+  # Log format - clean and informative
+  format: "%(asctime)s | %(emoji)s %(name)-6s | %(level_emoji)s %(levelname)-8s | %(message)s"
+  date_format: "%H:%M:%S"
+  
+  # Module-specific settings
+  modules:
+    data_manager:
+      level: "INFO"
+      name: "DATA"
+      color: "cyan"
+      
+    graph_builder:
+      level: "INFO" 
+      name: "GRAPH"
+      color: "blue"
+      
+    model:
+      level: "INFO"
+      name: "MODEL"
+      color: "magenta"
+      
+    training:
+      level: "INFO"
+      name: "TRAIN"
+      color: "green"
+      
+    evaluation:
+      level: "INFO"
+      name: "EVAL"
+      color: "yellow"
+      
+    system:
+      level: "INFO"
+      name: "SYSTEM"
+      color: "white"
+
+  # File logging (optional)
+  file_logging:
+    enabled: false
+    path: "logs/"
+    filename: "rc_graph_{date}.log"
+    max_size_mb: 10
+    backup_count: 5
+    
+  # Performance logging
+  performance:
+    enabled: true
+    log_memory_usage: false
+    log_timing: true
