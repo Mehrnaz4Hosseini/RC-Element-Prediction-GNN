@@ -22,14 +22,22 @@ data:
     beam: 1
   
   columns:
-    element_name: "Element_Name"
-    label_element_name: "Element Name"
     element_type: "Ele_Type"
-    source_node: "Source"
-    target_node: "Target"
+    source_node: "Source"  # These are ROW INDICES (0, 1, 2, ...)
+    target_node: "Target"  # These are ROW INDICES (0, 1, 2, ...)
     label_width: "Width (b)"
     label_height: "Height (h)" 
 
+  feature_handling:
+    exclude_from_features: ["Ele_Type", "row_index"]
+
+  pe:
+    enabled: true  # Master switch for positional encoding
+    dim: 8         # Dimension of positional encoding
+    type: "hetero_laplacian"  # Options: "hetero_laplacian", "random_walk", "none"
+    include_cross_type: false  # Whether to include beam-column connections in PE
+    normalize: true  # Normalize eigenvectors
+    
   # Feature columns to use
   feature_columns:
     - "Structural_System"
