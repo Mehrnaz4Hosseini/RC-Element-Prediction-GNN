@@ -9,12 +9,12 @@ data:
   test_dir: "data/test"
   pe_dim: 8  # Laplacian PE
   
-  # Note: The code now uses fuzzy matching (glob) to handle variable names
-  # like "Edge-ali hoseini.xlsx" or "Feature-barati_english.xlsx"
   file_patterns:
-    edge_prefix: "Edge"
-    feature_suffix: "*english.xlsx" # Ensures we get the english version
-    label_prefix: "Label"
+    edge_prefix: "Edge-"
+    feature_prefix: "Feature-"
+    feature_suffix: "_english.xlsx"
+    label_prefix: "Label-"
+
   
   # Node types based on Ele_Type column
   node_types: 
@@ -29,14 +29,12 @@ data:
     label_height: "Height (h)" 
 
   feature_handling:
-    exclude_from_features: ["Ele_Type", "row_index"]
+    exclude_from_features: ["Ele_Type", "row_index", "Element_Name"]
 
   pe:
     enabled: true  # Master switch for positional encoding
     dim: 8         # Dimension of positional encoding
-    type: "hetero_laplacian"  # Options: "hetero_laplacian", "random_walk", "none"
-    include_cross_type: false  # Whether to include beam-column connections in PE
-    normalize: true  # Normalize eigenvectors
+    type: auto     # Options: "hetero_laplacian", "random_walk", "none"
     
   # Feature columns to use
   feature_columns:

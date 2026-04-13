@@ -15,15 +15,7 @@ from typing import Dict, List, Optional, Tuple
 import yaml
 from datetime import datetime
 
-# Import logger
-try:
-    from src.utils.logger import get_data_logger, get_system_logger
-except ImportError:
-    # Fallback if logger not available
-    import logging
-
-    get_data_logger = lambda: logging.getLogger("DATA")
-    get_system_logger = lambda: logging.getLogger("SYSTEM")
+from src.utils.logger import get_data_logger, get_system_logger
 
 
 class HeteroDataLoader:
@@ -92,6 +84,7 @@ class HeteroDataLoader:
 
         # File patterns
         self.edge_prefix = patterns.get("edge_prefix", "Edge")
+        self.feature_prefix = patterns.get("feature_prefix", "Feature")
         self.feat_suffix = patterns.get("feature_suffix", "*english.xlsx")
         self.label_prefix = patterns.get("label_prefix", "Label")
 
@@ -116,9 +109,20 @@ class HeteroDataLoader:
 
         try:
             if prefix == "Feature":
-                pattern = os.path.join(folder_path, f"Feature-{self.feat_suffix}")
+                # Feature-{something}_english.xlsx
+                pattern = os.path.join(
+                    folder_path, f"{self.feature_prefix}*{self.feat_suffix}"
+                )
+
+            elif prefix == "Edge":
+                # Edge-{something}.xlsx
+                pattern = os.path.join(folder_path, f"{self.edge_prefix}*.xlsx")
+
+            elif prefix == "Label":
+                # Label-{something}.xlsx
+                pattern = os.path.join(folder_path, f"{self.label_prefix}*.xlsx")
             else:
-                pattern = os.path.join(folder_path, f"{prefix}-*.xlsx")
+                pattern = os.path.join(folder_path, f"{prefix}*.xlsx")
 
             files = glob.glob(pattern)
 
@@ -249,8 +253,33 @@ class HeteroDataLoader:
     ) -> Optional[Dict]:
         """Load data from Excel files."""
         try:
-            edges_df = pd.read_excel(files["edge"])
-            features_df = pd.read_excel(files["feature"])
+            features_df = pd.read_excel(files["feature"]).convert_dtypes()
+            edges_df = pd.read_excel(files["edge"]).convert_dtypes()
+
+            # Validate that all edge endpoints exist in feature index
+            feature_index_set = set(features_df.index)
+
+            # Collect all referenced node IDs from edges
+            edge_node_ids = set(edges_df[self.source_col]) | set(
+                edges_df[self.target_col]
+            )
+
+            # Compute which node IDs in edges do NOT exist in the feature index
+            missing_node_ids = edge_node_ids - feature_index_set
+
+            if missing_node_ids:
+                # Log first few missing IDs so the msg stays readable
+                sample_missing_preview = list(missing_node_ids)[:10]
+
+                self.logger.error(
+                    f"[{sample_name}] Edge file references {len(missing_node_ids)} "
+                    f"non-existing node IDs. First few: {sample_missing_preview}"
+                )
+            else:
+                self.logger.info(
+                    f"[{sample_name}] Edge node IDs validated successfully. "
+                    f"All {len(edge_node_ids)} referenced nodes exist in features."
+                )
 
             # Add row index
             features_df[self.row_index_col] = features_df.index
@@ -385,3 +414,18 @@ class HeteroDataLoader:
                 else 0
             ),
         }
+
+    def summarize_dataset(self, samples):
+        total_beams = 0
+        total_columns = 0
+        total_edges = 0
+
+        for s in samples:
+            total_beams += len(s["nodes"]["beam"])
+            total_columns += len(s["nodes"]["column"])
+            total_edges += len(s["edges_raw"])
+
+        self.logger.info(f"Dataset summary:")
+        self.logger.info(f"Beams: {total_beams}")
+        self.logger.info(f"Columns: {total_columns}")
+        self.logger.info(f"Edges: {total_edges}")
