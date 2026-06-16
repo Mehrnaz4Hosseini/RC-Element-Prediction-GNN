@@ -183,6 +183,12 @@ class HeteroGraphBuilder:
             )
             data[node_type].x = torch.from_numpy(x_norm).float()
 
+            if all(col in df.columns for col in ["X1", "Y1", "Z1"]):
+                coords = df[["X1", "Y1", "Z1"]].values.astype(np.float32)
+                data[node_type].pos = torch.tensor(coords, dtype=torch.float)
+            else:
+                print(f"[WARNING] {node_type} has no X1,Y1,Z1 columns")
+
             y_list = []
             for _, row in df.iterrows():
                 rid = int(row[self.row_index_col])

@@ -168,7 +168,6 @@ def compute_positional_encoding(data, pe_dim):
     logger.info(f"Computing positional encoding (dim={pe_dim})")
 
     try:
-        # ⭐ Replace the old ToHomogeneous(data)
         edge_index, num_nodes, _ = hetero_to_homo(data)
 
         # 1. Try random walk PE
