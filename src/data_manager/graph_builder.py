@@ -10,7 +10,6 @@ from torch_geometric.data import HeteroData
 from typing import Dict, List, Optional, Tuple
 
 from src.data_manager.data_processor import (
-    normalize_features,
     add_positional_encoding,
 )
 from src.utils.logger import get_graph_logger, get_system_logger
@@ -177,11 +176,14 @@ class HeteroGraphBuilder:
             self.feat_cols_dict[node_type] = feat_cols
             self.original_feat_counts[node_type] = len(feat_cols)
 
+            # Store RAW (un-scaled) features. Normalization is done AFTER the
+            # train/test split via FeatureNormalizer to avoid data leakage.
             x_raw = df[feat_cols].values.astype(np.float32)
-            x_norm, self.scalers[node_type] = normalize_features(
-                x_raw, self.scalers[node_type]
-            )
-            data[node_type].x = torch.from_numpy(x_norm).float()
+            data[node_type].x = torch.from_numpy(x_raw).float()
+            data[node_type].num_raw_features = x_raw.shape[1]
+            # Keep the column order so the PositionalEncoder can locate
+            # coordinate columns (X1,Y1,Z1,X2,Y2,Z2) downstream.
+            data[node_type].feature_names = list(feat_cols)
 
             if all(col in df.columns for col in ["X1", "Y1", "Z1"]):
                 coords = df[["X1", "Y1", "Z1"]].values.astype(np.float32)
@@ -295,11 +297,19 @@ class HeteroGraphBuilder:
 
     # --------------------------------------------------------------------------
     def _assign_edges_to_graph(self, data: HeteroData, bundles: Dict):
+        from torch_geometric.utils import coalesce, to_undirected
+
         for (src_t, rel, dst_t), (slist, dlist) in bundles.items():
             if slist and dlist:
-                data[src_t, rel, dst_t].edge_index = torch.tensor(
-                    [slist, dlist], dtype=torch.long
-                )
+                ei = torch.tensor([slist, dlist], dtype=torch.long)
+                if src_t == dst_t:
+                    # Same-type relations are physically undirected: enforce
+                    # both directions and drop duplicates. Robust even if a
+                    # source file lists an edge only one way.
+                    ei = to_undirected(ei, num_nodes=data[src_t].num_nodes)
+                else:
+                    ei = coalesce(ei)  # dedup any repeated cross-type edges
+                data[src_t, rel, dst_t].edge_index = ei
             else:
                 data[src_t, rel, dst_t].edge_index = torch.empty(
                     (2, 0), dtype=torch.long

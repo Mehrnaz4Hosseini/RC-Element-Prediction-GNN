@@ -18,6 +18,8 @@ training:
   grad_clip: 1.0
   height_weight: 1.0
   k_folds: 5
+  loss_type: huber       # huber | mse | mae  (training objective)
+  huber_delta: 1.0       # in scaled-target units (~1 std); robust to noise
   learning_rate: 0.001
   patience: 20
   scheduler_factor: 0.5

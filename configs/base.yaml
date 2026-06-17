@@ -32,9 +32,9 @@ data:
     exclude_from_features: ["Ele_Type", "row_index", "Element_Name"]
 
   pe:
-    enabled: true  # Master switch for positional encoding
-    dim: 8         # Dimension of positional encoding
-    type: auto     # Options: "hetero_laplacian", "random_walk", "none"
+    enabled: false   # builder no longer appends PE; applied post-load (notebook)
+    mode: hybrid     # geometric | topological | hybrid | none  <- compare these
+    dim: 8           # random-walk dims used by the topological/hybrid modes
     
   # Feature columns to use
   feature_columns:

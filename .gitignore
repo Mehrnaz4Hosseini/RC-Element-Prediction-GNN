@@ -3,3 +3,4 @@ __pycache__/
 .env
 data
 1_homogeneous
+notebooks/checkpoints
