@@ -78,6 +78,11 @@ class HeteroGraphBuilder:
             "exclude_from_features", ["Ele_Type", "row_index", "Element_Name"]
         )
 
+        # Drop elements whose label is (width==0 AND height==0) or missing.
+        # Done in-memory at build time only -- the source files are untouched.
+        # Visualization can keep all elements by passing drop_invalid=False.
+        self.drop_invalid_labels = data_config.get("drop_invalid_labels", False)
+
         self.verbose = False
 
     # --------------------------------------------------------------------------
@@ -91,11 +96,21 @@ class HeteroGraphBuilder:
         self.logger.debug(f"Verbose mode set to: {verbose}")
 
     # --------------------------------------------------------------------------
-    def build_hetero_graph(self, sample_data: Dict) -> Optional[HeteroData]:
+    def build_hetero_graph(
+        self, sample_data: Dict, drop_invalid: Optional[bool] = None
+    ) -> Optional[HeteroData]:
         sample_name = sample_data.get("sample_name", "unknown")
+
+        # Resolve the drop policy (explicit arg overrides config). Pass
+        # drop_invalid=False when building graphs for VISUALIZATION so every
+        # element is kept.
+        do_drop = self.drop_invalid_labels if drop_invalid is None else drop_invalid
 
         self.logger.info(f"Building hetero graph for sample: {sample_name}")
         try:
+            if do_drop:
+                sample_data = self._drop_invalid_nodes(sample_data, sample_name)
+
             data = HeteroData()
             self._process_nodes(data, sample_data, sample_name)
             self._process_edges(data, sample_data, sample_name)
@@ -117,6 +132,41 @@ class HeteroGraphBuilder:
             self.logger.error(f"❌ Failed to build graph for {sample_name}: {e}")
             self.stats["failed_builds"] += 1
             return None
+
+    # --------------------------------------------------------------------------
+    def _drop_invalid_nodes(self, sample_data: Dict, sample_name: str) -> Dict:
+        """
+        Return a copy of sample_data with beam/column rows removed when their
+        label is missing or (width==0 AND height==0). Edges that referenced a
+        removed node are dropped automatically downstream (the node mapping no
+        longer contains them). The original dict / source files are untouched.
+        """
+        label_map = self._create_label_mapping(
+            sample_data["labels_raw"], sample_name
+        )
+        new_nodes, dropped = {}, 0
+        for nt in ["beam", "column"]:
+            df = sample_data["nodes"][nt]
+            if df.empty:
+                new_nodes[nt] = df
+                continue
+            keep = []
+            for _, row in df.iterrows():
+                rid = int(row[self.row_index_col])
+                lab = label_map.get(rid)
+                invalid = (lab is None) or (lab[0] == 0 and lab[1] == 0)
+                keep.append(not invalid)
+            kept = df[pd.Series(keep, index=df.index)]
+            dropped += len(df) - len(kept)
+            new_nodes[nt] = kept
+
+        if dropped:
+            self.logger.info(
+                f"{sample_name}: dropped {dropped} invalid (0,0)/missing-label nodes"
+            )
+        sd = dict(sample_data)
+        sd["nodes"] = new_nodes
+        return sd
 
     # --------------------------------------------------------------------------
     def _process_nodes(self, data: HeteroData, sample_data: Dict, sample_name: str):

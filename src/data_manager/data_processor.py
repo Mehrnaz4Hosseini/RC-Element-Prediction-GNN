@@ -432,6 +432,102 @@ class PositionalEncoder:
 
 
 # ==================================================
+# ISOLATED-NODE HANDLER  (none / self_loop / knn)
+# ==================================================
+class IsolatedNodeHandler:
+    """
+    Three switchable strategies for the ~11% beams that have no edges, so you
+    can report results for each. Apply BEFORE the PositionalEncoder (it changes
+    edges, which the topological PE reads).
+
+        IsolatedNodeHandler(strategy="none")                 # keep as-is
+        IsolatedNodeHandler(strategy="self_loop")            # add i->i edges
+        IsolatedNodeHandler(strategy="knn", k=4).transform(graphs)
+
+    All strategies only touch SAME-TYPE relations (beam->beam, column->column),
+    so the model architecture is identical across options -> a fair comparison.
+
+    knn: each isolated node is connected (bidirectionally) to its k physically
+    nearest same-type nodes using the stored 3D position. `k` is a single
+    hyper-parameter; try a few values per run since the ideal k differs by
+    building.
+    """
+
+    def __init__(self, strategy: str = "none", k: int = 4,
+                 node_types: Optional[List[str]] = None):
+        assert strategy in {"none", "self_loop", "knn"}
+        self.strategy = strategy
+        self.k = k
+        self.node_types = node_types or ["beam", "column"]
+
+    def transform(self, graphs: List) -> List:
+        for g in graphs:
+            if getattr(g, "_iso_done", False) or self.strategy == "none":
+                g._iso_done = True
+                continue
+            if self.strategy == "self_loop":
+                self._self_loops(g)
+            else:
+                self._knn(g)
+            g._iso_done = True
+        return graphs
+
+    def _isolated(self, g, nt) -> List[int]:
+        N = g[nt].x.shape[0]
+        conn = set()
+        for et in g.edge_types:
+            s, _, d = et
+            ei = g[et].edge_index
+            if ei.shape[1] == 0:
+                continue
+            if s == nt:
+                conn.update(ei[0].tolist())
+            if d == nt:
+                conn.update(ei[1].tolist())
+        return [i for i in range(N) if i not in conn]
+
+    def _append(self, g, nt, src, dst):
+        et = (nt, "to", nt)
+        new = torch.tensor([src, dst], dtype=torch.long)
+        if et in g.edge_types and g[et].edge_index.shape[1] > 0:
+            g[et].edge_index = torch.cat([g[et].edge_index, new], dim=1)
+        else:
+            g[et].edge_index = new
+
+    def _self_loops(self, g):
+        for nt in self.node_types:
+            if nt not in g.node_types:
+                continue
+            N = g[nt].x.shape[0]
+            idx = list(range(N))
+            self._append(g, nt, idx, idx)   # self-loop for every node
+
+    def _knn(self, g):
+        for nt in self.node_types:
+            if nt not in g.node_types:
+                continue
+            iso = self._isolated(g, nt)
+            if not iso:
+                continue
+            pos = getattr(g[nt], "pos", None)
+            if pos is None:
+                logger.warning(f"knn: '{nt}' has no .pos; skipping")
+                continue
+            N = pos.shape[0]
+            k = min(self.k, N - 1)
+            if k < 1:
+                continue
+            src, dst = [], []
+            for i in iso:
+                d = torch.norm(pos - pos[i], dim=1)
+                d[i] = float("inf")
+                for j in torch.topk(d, k, largest=False).indices.tolist():
+                    src += [i, j]      # bidirectional
+                    dst += [j, i]
+            self._append(g, nt, src, dst)
+
+
+# ==================================================
 # TARGET NORMALIZER  (scales y = [width, height])
 # ==================================================
 class TargetNormalizer:

@@ -64,11 +64,13 @@ class Trainer:
         criterion: Optional[nn.Module] = None,
         device: Optional[torch.device] = None,
         normalize: bool = True,
+        show_progress: bool = False,
     ):
         self.config = config
         self.device = device or DeviceManager.get_device()
         self.model = model.to(self.device)
         self.normalize = normalize
+        self.show_progress = show_progress
 
         tcfg = config.get("training", {})
         self.epochs = tcfg.get("epochs", 100)
@@ -262,9 +264,22 @@ class Trainer:
         best_val, best_state, patience = float("inf"), None, 0
         history = defaultdict(list)
 
-        for epoch in range(self.epochs):
+        epoch_iter = range(self.epochs)
+        if self.show_progress:
+            try:
+                from tqdm.auto import tqdm
+                epoch_iter = tqdm(epoch_iter, desc=f"{tag} epochs", leave=False)
+            except ImportError:
+                pass
+
+        for epoch in epoch_iter:
             tr = self.train_epoch(train_graphs)
             va = self.validate_epoch(val_graphs)
+            if self.show_progress and hasattr(epoch_iter, "set_postfix"):
+                epoch_iter.set_postfix(
+                    val=f"{va.get('val_loss', 0):.3f}",
+                    beam_mae=f"{va.get('val_beam_mae', 0):.2f}",
+                )
             row = {**tr, **va, "epoch": epoch + 1,
                    "lr": self.optimizer.param_groups[0]["lr"]}
             for k, v in row.items():
@@ -285,8 +300,10 @@ class Trainer:
                 logger.info(
                     f"[{tag}] ep {epoch+1}/{self.epochs} | "
                     f"train {tr['train_loss']:.4f} | val {val_loss:.4f} | "
-                    f"beam_mae {va.get('val_beam_mae', float('nan')):.3f} | "
-                    f"col_mae {va.get('val_column_mae', float('nan')):.3f}"
+                    f"beam MAE {va.get('val_beam_mae', float('nan')):.3f} "
+                    f"R2 {va.get('val_beam_r2', float('nan')):.3f} | "
+                    f"col MAE {va.get('val_column_mae', float('nan')):.3f} "
+                    f"R2 {va.get('val_column_r2', float('nan')):.3f}"
                 )
             if patience >= self.patience:
                 logger.info(f"[{tag}] early stop at epoch {epoch+1}")
@@ -384,9 +401,20 @@ class Trainer:
             test, prefix="test", true_is_scaled=False, collect_preds=True
         )
         final = {k: float(v) for k, v in metrics.items() if k != "test_loss"}
+
+        # Headline: overall MAE in real units (cm) -- the number to report.
+        type_maes = [final[f"test_{nt}_mae"] for nt in self.node_types
+                     if f"test_{nt}_mae" in final]
+        if type_maes:
+            final["test_overall_mae"] = float(np.mean(type_maes))
+
         logger.info("\nTest results (real units):")
         for k, v in final.items():
             logger.info(f"  {k:28s}: {v:.4f}")
+        if "test_overall_mae" in final:
+            logger.info(f"\n  >>> HEADLINE  MAE = {final['test_overall_mae']:.3f} cm "
+                        f"(beam {final.get('test_beam_mae', float('nan')):.3f} / "
+                        f"column {final.get('test_column_mae', float('nan')):.3f})")
         return {"metrics": final, "predictions": preds}
 
     # ================================================================== #

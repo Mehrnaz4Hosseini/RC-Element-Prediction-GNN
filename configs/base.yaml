@@ -8,6 +8,15 @@ data:
   train_dir: "data/train"
   test_dir: "data/test"
   pe_dim: 8  # Laplacian PE
+
+  # Drop elements whose label is (0,0)/missing at build time (NOT in source
+  # files). Set False when building graphs for visualization (keep all nodes).
+  drop_invalid_labels: true
+
+  # Isolated-node strategy applied post-load (notebook). Compare all three.
+  isolated:
+    strategy: none   # none | self_loop | knn
+    knn_k: 4
   
   file_patterns:
     edge_prefix: "Edge-"
