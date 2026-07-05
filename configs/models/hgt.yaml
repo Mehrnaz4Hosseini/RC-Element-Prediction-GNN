@@ -1,48 +1,44 @@
 # HGT Configuration for RC Element Prediction
+# Canonical model config. Loaded by notebooks/5_hgt_training.ipynb and merged
+# over configs/base.yaml. Keys here are the ones the code actually reads
+# (src/training/trainer.py, src/training/losses.py, src/models/hgt.py).
 model:
-  type: "hgt"
+  type: hgt
   # Architecture
-  hidden_channels: 128      # Hidden dimension throughout the network
-  num_layers: 3             # Number of HGT layers (message passing steps)
-  num_heads: 4              # Attention heads per relation type
-  dropout: 0.3              # Dropout for regularization
-  
-  # Node types (from your graph builder)
+  hidden_channels: 128       # hidden dimension throughout the network
+  num_layers: 3              # number of HGT layers (message-passing steps)
+  num_heads: 4               # attention heads per relation type
+  dropout: 0.3               # dropout for regularization
+  # Node types (from the graph builder)
   node_types:
     - beam
     - column
-  
-  # Edge types (from your graph builder - 4 relation types)
+  # Edge types (documentary — the 4 directed relations the builder produces)
   edge_types:
-    - ["beam", "to", "beam"]      # Beam-to-beam connections
-    - ["column", "to", "column"]   # Column-to-column connections  
-    - ["beam", "to", "column"]     # Beam loading columns
-    - ["column", "to", "beam"]     # Column supporting beams
-  
-  # Prediction targets
-  output_dim: 2             # Width (b) and Height (h)
-  
-  # Optional: Structural engineering inductive bias
+    - ["beam", "to", "beam"]
+    - ["column", "to", "column"]
+    - ["beam", "to", "column"]
+    - ["column", "to", "beam"]
+  output_dim: 2              # Width (b) and Height (h)
   use_structural_encoding: true
 
 training:
   epochs: 100
   learning_rate: 0.001
-  weight_decay: 0.0001      # L2 regularization
-  patience: 20              # Early stopping patience
-  scheduler_factor: 0.5     # Reduce LR by half when plateauing
-  scheduler_patience: 10    # LR scheduler patience
-  
-  # Loss function
-  loss: "mse"               # Mean Squared Error for regression
-  
-  # Gradient clipping
+  weight_decay: 0.0001       # L2 regularization
+  patience: 20               # early-stopping patience
+  scheduler_factor: 0.5      # reduce LR by half on plateau
+  scheduler_patience: 10     # LR scheduler patience
   grad_clip: 1.0
+  k_folds: 5
+  # Loss (read by src/training/losses.py via loss_type / huber_delta)
+  loss_type: huber           # huber | mse | mae
+  huber_delta: 1.0           # in scaled-target units (~1 std); robust to noise
+  # Per-target / per-type loss weights
+  width_weight: 1.0
+  height_weight: 1.0
+  beam_weight: 1.0
+  column_weight: 1.0
 
 paths:
-  checkpoints: "checkpoints/hgt"
-  
-# Logging
-logging:
-  log_attention_weights: false  # Set true to analyze relationships
-  log_gradients: false
+  checkpoints: checkpoints/hgt

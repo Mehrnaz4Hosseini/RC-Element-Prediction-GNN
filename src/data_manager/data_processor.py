@@ -462,12 +462,24 @@ class IsolatedNodeHandler:
 
     def transform(self, graphs: List) -> List:
         for g in graphs:
-            if getattr(g, "_iso_done", False) or self.strategy == "none":
-                g._iso_done = True
+            if getattr(g, "_iso_done", False):
                 continue
+            # Tag originally-isolated nodes (computed from the RAW edges, BEFORE
+            # any self-loop/knn edges are added) so downstream analysis can
+            # break errors down by isolated vs connected. Done for ALL
+            # strategies, including "none".
+            for nt in self.node_types:
+                if nt not in g.node_types:
+                    continue
+                iso = self._isolated(g, nt)
+                mask = torch.zeros(g[nt].x.shape[0], dtype=torch.bool)
+                if iso:
+                    mask[torch.tensor(iso, dtype=torch.long)] = True
+                g[nt].was_isolated = mask
+
             if self.strategy == "self_loop":
                 self._self_loops(g)
-            else:
+            elif self.strategy == "knn":
                 self._knn(g)
             g._iso_done = True
         return graphs

@@ -238,6 +238,21 @@ class Trainer:
                 (1 - ss_res / ss_tot).item() if ss_tot > 0 else 0.0
             )
 
+        # overall (all node types pooled) -> the headline numbers
+        all_err = [e for d in per_node.values() for e in d["err"]]
+        all_true = [t for d in per_node.values() for t in d["true"]]
+        if all_err:
+            err = torch.cat(all_err, dim=0)
+            true = torch.cat(all_true, dim=0)
+            m[f"{prefix}_overall_mae"] = err.abs().mean().item()
+            m[f"{prefix}_overall_mse"] = (err ** 2).mean().item()
+            m[f"{prefix}_overall_rmse"] = torch.sqrt((err ** 2).mean()).item()
+            ss_res = (err ** 2).sum()
+            ss_tot = ((true - true.mean(0)) ** 2).sum()
+            m[f"{prefix}_overall_r2"] = (
+                (1 - ss_res / ss_tot).item() if ss_tot > 0 else 0.0
+            )
+
         n = max(1, len(graphs))
         m[f"{prefix}_loss"] /= n
         out = dict(m)
@@ -402,17 +417,21 @@ class Trainer:
         )
         final = {k: float(v) for k, v in metrics.items() if k != "test_loss"}
 
-        # Headline: overall MAE in real units (cm) -- the number to report.
+        # `test_overall_mae` (from _eval_loop) is POOLED over all nodes, i.e.
+        # node-count WEIGHTED -- keep it untouched; it is the headline number.
+        # Separately expose the UNWEIGHTED MAE = simple mean of the per-type
+        # MAEs (treats beam and column equally regardless of how many of each).
         type_maes = [final[f"test_{nt}_mae"] for nt in self.node_types
                      if f"test_{nt}_mae" in final]
         if type_maes:
-            final["test_overall_mae"] = float(np.mean(type_maes))
+            final["test_unweighted_mae"] = float(np.mean(type_maes))
 
         logger.info("\nTest results (real units):")
         for k, v in final.items():
             logger.info(f"  {k:28s}: {v:.4f}")
         if "test_overall_mae" in final:
-            logger.info(f"\n  >>> HEADLINE  MAE = {final['test_overall_mae']:.3f} cm "
+            logger.info(f"\n  >>> HEADLINE  weighted MAE = {final['test_overall_mae']:.3f} cm "
+                        f"| unweighted {final.get('test_unweighted_mae', float('nan')):.3f} "
                         f"(beam {final.get('test_beam_mae', float('nan')):.3f} / "
                         f"column {final.get('test_column_mae', float('nan')):.3f})")
         return {"metrics": final, "predictions": preds}
