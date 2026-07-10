@@ -1,0 +1,49 @@
+# HAN Configuration for RC Element Prediction
+# Parallel to configs/models/hgt.yaml. Loaded by notebooks/6_han_training.ipynb
+# and merged over configs/base.yaml. Kept intentionally identical to hgt.yaml
+# except `model.type: han`, so the ONLY thing that changes between the two
+# experiments is the message-passing operator (HANConv vs HGTConv). That keeps
+# the comparison fair. Keys here are the ones the code actually reads
+# (src/training/trainer.py, src/training/losses.py, src/models/han.py).
+model:
+  type: han
+  # Architecture
+  hidden_channels: 128       # hidden dimension throughout the network
+  num_layers: 3              # number of HAN layers (message-passing steps)
+  num_heads: 4               # node-level attention heads per metapath (relation)
+  dropout: 0.3               # dropout for regularization (also HANConv attn dropout)
+  # Node types (from the graph builder)
+  node_types:
+    - beam
+    - column
+  # Edge types (documentary — the 4 directed relations the builder produces).
+  # HAN treats each of these as a length-1 metapath and learns a semantic
+  # attention weight per relation on top of node-level attention.
+  edge_types:
+    - ["beam", "to", "beam"]
+    - ["column", "to", "column"]
+    - ["beam", "to", "column"]
+    - ["column", "to", "beam"]
+  output_dim: 2              # Width (b) and Height (h)
+  use_structural_encoding: true
+
+training:
+  epochs: 100
+  learning_rate: 0.001
+  weight_decay: 0.0001       # L2 regularization
+  patience: 20               # early-stopping patience
+  scheduler_factor: 0.5      # reduce LR by half on plateau
+  scheduler_patience: 10     # LR scheduler patience
+  grad_clip: 1.0
+  k_folds: 5
+  # Loss (read by src/training/losses.py via loss_type / huber_delta)
+  loss_type: huber           # huber | mse | mae
+  huber_delta: 1.0           # in scaled-target units (~1 std); robust to noise
+  # Per-target / per-type loss weights
+  width_weight: 1.0
+  height_weight: 1.0
+  beam_weight: 1.0
+  column_weight: 1.0
+
+paths:
+  checkpoints: checkpoints/han
