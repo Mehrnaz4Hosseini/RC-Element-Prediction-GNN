@@ -1,0 +1,56 @@
+{
+  "timestamp": "20260623_105643",
+  "config": {
+    "model": {
+      "dropout": 0.3,
+      "hidden_channels": 128,
+      "node_types": [
+        "beam",
+        "column"
+      ],
+      "num_heads": 4,
+      "num_layers": 3,
+      "output_dim": 2,
+      "type": "hgt",
+      "use_structural_encoding": true
+    },
+    "training": {
+      "beam_weight": 1.0,
+      "column_weight": 1.0,
+      "epochs": 100,
+      "grad_clip": 1.0,
+      "height_weight": 1.0,
+      "k_folds": 5,
+      "loss_type": "huber",
+      "huber_delta": 1.0,
+      "learning_rate": 0.001,
+      "patience": 20,
+      "scheduler_factor": 0.5,
+      "scheduler_patience": 10,
+      "weight_decay": 0.0001,
+      "width_weight": 1.0
+    }
+  },
+  "cv_results": {
+    "n_folds": 5,
+    "mean_val_loss": 0.43555886031583296,
+    "std_val_loss": 0.05259436481718194,
+    "beam_mae": 7.261905193328857,
+    "column_mae": 4.304641532897949
+  },
+  "test_metrics": {
+    "test_beam_mae": 7.918037414550781,
+    "test_beam_mse": 145.6587371826172,
+    "test_beam_rmse": 12.068916320800781,
+    "test_beam_width_mae": 8.729228019714355,
+    "test_beam_height_mae": 7.106845855712891,
+    "test_beam_r2": 0.49624449014663696,
+    "test_column_mae": 6.801852703094482,
+    "test_column_mse": 141.23207092285156,
+    "test_column_rmse": 11.884110450744629,
+    "test_column_width_mae": 8.756481170654297,
+    "test_column_height_mae": 4.847223281860352,
+    "test_column_r2": 0.2686913013458252,
+    "test_overall_mae": 7.359945058822632
+  }
+}
