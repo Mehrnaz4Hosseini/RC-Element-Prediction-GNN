@@ -1,0 +1,34 @@
+{
+  "internal_best": {
+    "model": "HAN",
+    "combo": "topological/none",
+    "weighted_MAE": 5.512,
+    "hit_rate": 63.9,
+    "R2": 0.552
+  },
+  "external_best": {
+    "model": "HGT",
+    "weighted_MAE": 4.93,
+    "gap_to_other_cm": 0.1070000000000002
+  },
+  "data_quality": {
+    "n_unique_nodes": 8281,
+    "tiny_elements(<15cm)": 46,
+    "tiny_pct": 0.56,
+    "suspect_samples_both_fail": [
+      "sample_240",
+      "sample_151",
+      "sample_233",
+      "sample_189"
+    ],
+    "label_suspect_nodes(A)": 46,
+    "underfit_nodes(B)": 1087,
+    "label_suspect_samples": [
+      "sample_39",
+      "sample_191",
+      "sample_192",
+      "sample_31",
+      "sample_6"
+    ]
+  }
+}

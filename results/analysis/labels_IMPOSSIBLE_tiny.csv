@@ -1,0 +1,450 @@
+split,sample,label_file,df_row_0based,excel_row,Element_Name,Width_b,Height_h
+train,sample_141,data/train/sample_141/Label-Keshavarz.xlsx,122,124,123.0,5.0,5.0
+train,sample_18,data/train/sample_18/Label-26 bagheri ej 4.xlsx,114,116,133.0,10.0,10.0
+train,sample_18,data/train/sample_18/Label-26 bagheri ej 4.xlsx,115,117,135.0,10.0,10.0
+train,sample_18,data/train/sample_18/Label-26 bagheri ej 4.xlsx,116,118,136.0,10.0,10.0
+train,sample_18,data/train/sample_18/Label-26 bagheri ej 4.xlsx,117,119,137.0,10.0,10.0
+train,sample_18,data/train/sample_18/Label-26 bagheri ej 4.xlsx,118,120,138.0,10.0,10.0
+train,sample_18,data/train/sample_18/Label-26 bagheri ej 4.xlsx,119,121,139.0,10.0,10.0
+train,sample_18,data/train/sample_18/Label-26 bagheri ej 4.xlsx,120,122,141.0,10.0,10.0
+train,sample_18,data/train/sample_18/Label-26 bagheri ej 4.xlsx,121,123,142.0,10.0,10.0
+train,sample_18,data/train/sample_18/Label-26 bagheri ej 4.xlsx,122,124,143.0,10.0,10.0
+train,sample_18,data/train/sample_18/Label-26 bagheri ej 4.xlsx,123,125,144.0,10.0,10.0
+train,sample_187,data/train/sample_187/Label-T- (27).xlsx,89,91,91.0,5.0,5.0
+train,sample_187,data/train/sample_187/Label-T- (27).xlsx,94,96,96.0,5.0,5.0
+train,sample_187,data/train/sample_187/Label-T- (27).xlsx,104,106,106.0,5.0,5.0
+train,sample_187,data/train/sample_187/Label-T- (27).xlsx,107,109,109.0,5.0,5.0
+train,sample_191,data/train/sample_191/Label-T- (31).xlsx,145,147,176.0,5.0,5.0
+train,sample_191,data/train/sample_191/Label-T- (31).xlsx,146,148,177.0,5.0,5.0
+train,sample_191,data/train/sample_191/Label-T- (31).xlsx,147,149,178.0,5.0,5.0
+train,sample_191,data/train/sample_191/Label-T- (31).xlsx,148,150,179.0,5.0,5.0
+train,sample_191,data/train/sample_191/Label-T- (31).xlsx,149,151,180.0,5.0,5.0
+train,sample_191,data/train/sample_191/Label-T- (31).xlsx,150,152,186.0,5.0,5.0
+train,sample_191,data/train/sample_191/Label-T- (31).xlsx,151,153,187.0,5.0,5.0
+train,sample_191,data/train/sample_191/Label-T- (31).xlsx,152,154,188.0,5.0,5.0
+train,sample_191,data/train/sample_191/Label-T- (31).xlsx,153,155,189.0,5.0,5.0
+train,sample_191,data/train/sample_191/Label-T- (31).xlsx,154,156,190.0,5.0,5.0
+train,sample_192,data/train/sample_192/Label-T- (32).xlsx,66,68,67.0,5.0,5.0
+train,sample_205,data/train/sample_205/Label-T- (50).xlsx,16,18,17.0,5.0,5.0
+train,sample_205,data/train/sample_205/Label-T- (50).xlsx,37,39,38.0,5.0,5.0
+train,sample_205,data/train/sample_205/Label-T- (50).xlsx,58,60,59.0,5.0,5.0
+train,sample_205,data/train/sample_205/Label-T- (50).xlsx,79,81,80.0,5.0,5.0
+train,sample_205,data/train/sample_205/Label-T- (50).xlsx,113,115,114.0,5.0,5.0
+train,sample_205,data/train/sample_205/Label-T- (50).xlsx,114,116,115.0,5.0,5.0
+train,sample_205,data/train/sample_205/Label-T- (50).xlsx,115,117,116.0,5.0,5.0
+train,sample_205,data/train/sample_205/Label-T- (50).xlsx,116,118,117.0,5.0,5.0
+train,sample_205,data/train/sample_205/Label-T- (50).xlsx,120,122,121.0,5.0,5.0
+train,sample_205,data/train/sample_205/Label-T- (50).xlsx,127,129,128.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,69,71,73.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,73,75,77.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,78,80,82.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,82,84,86.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,87,89,91.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,91,93,95.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,96,98,100.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,97,99,101.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,101,103,105.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,104,106,109.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,108,110,113.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,113,115,118.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,117,119,122.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,126,128,131.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,131,133,136.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,135,137,140.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,140,142,145.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,141,143,147.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,142,144,148.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,143,145,149.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,168,170,185.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,173,175,190.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,177,179,194.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,182,184,199.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,186,188,203.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,190,192,207.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,195,197,212.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,204,206,221.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,209,211,226.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,213,215,230.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,216,218,233.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,222,224,239.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,227,229,244.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,231,233,248.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,236,238,253.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,240,242,257.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,245,247,262.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,249,251,266.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,254,256,271.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,258,260,275.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,261,263,278.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,263,265,280.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,264,266,281.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,265,267,282.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,266,268,283.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,267,269,284.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,268,270,285.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,269,271,286.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,270,272,287.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,271,273,288.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,272,274,289.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,273,275,290.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,274,276,291.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,275,277,292.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,276,278,293.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,277,279,294.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,278,280,295.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,279,281,296.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,280,282,297.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,281,283,298.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,282,284,299.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,283,285,300.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,284,286,301.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,285,287,302.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,286,288,303.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,291,293,308.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,292,294,309.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,293,295,310.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,295,297,312.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,296,298,313.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,297,299,314.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,298,300,315.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,299,301,316.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,300,302,317.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,301,303,318.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,302,304,319.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,303,305,320.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,304,306,321.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,305,307,322.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,306,308,323.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,318,320,335.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,320,322,337.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,322,324,339.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,324,326,341.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,326,328,343.0,5.0,5.0
+train,sample_232,data/train/sample_232/Label-mahmoodi 09.xlsx,373,375,392.0,5.0,5.0
+train,sample_29,data/train/sample_29/Label-439 abdollahi ej 02.xlsx,150,152,175.0,10.0,10.0
+train,sample_29,data/train/sample_29/Label-439 abdollahi ej 02.xlsx,151,153,177.0,10.0,10.0
+train,sample_29,data/train/sample_29/Label-439 abdollahi ej 02.xlsx,152,154,178.0,10.0,10.0
+train,sample_29,data/train/sample_29/Label-439 abdollahi ej 02.xlsx,153,155,179.0,10.0,10.0
+train,sample_29,data/train/sample_29/Label-439 abdollahi ej 02.xlsx,154,156,180.0,10.0,10.0
+train,sample_29,data/train/sample_29/Label-439 abdollahi ej 02.xlsx,155,157,181.0,10.0,10.0
+train,sample_29,data/train/sample_29/Label-439 abdollahi ej 02.xlsx,156,158,183.0,10.0,10.0
+train,sample_29,data/train/sample_29/Label-439 abdollahi ej 02.xlsx,157,159,184.0,10.0,10.0
+train,sample_29,data/train/sample_29/Label-439 abdollahi ej 02.xlsx,158,160,185.0,10.0,10.0
+train,sample_29,data/train/sample_29/Label-439 abdollahi ej 02.xlsx,159,161,186.0,10.0,10.0
+train,sample_29,data/train/sample_29/Label-439 abdollahi ej 02.xlsx,160,162,187.0,10.0,10.0
+train,sample_29,data/train/sample_29/Label-439 abdollahi ej 02.xlsx,161,163,189.0,10.0,10.0
+train,sample_29,data/train/sample_29/Label-439 abdollahi ej 02.xlsx,162,164,190.0,10.0,10.0
+train,sample_29,data/train/sample_29/Label-439 abdollahi ej 02.xlsx,163,165,191.0,10.0,10.0
+train,sample_29,data/train/sample_29/Label-439 abdollahi ej 02.xlsx,164,166,192.0,10.0,10.0
+train,sample_31,data/train/sample_31/Label-466 hasani manesh ej.xlsx,138,140,157.0,10.0,10.0
+train,sample_31,data/train/sample_31/Label-466 hasani manesh ej.xlsx,139,141,159.0,10.0,10.0
+train,sample_31,data/train/sample_31/Label-466 hasani manesh ej.xlsx,140,142,160.0,10.0,10.0
+train,sample_31,data/train/sample_31/Label-466 hasani manesh ej.xlsx,141,143,161.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,158,160,218.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,159,161,220.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,160,162,221.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,161,163,222.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,162,164,223.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,163,165,224.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,164,166,232.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,165,167,234.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,166,168,235.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,167,169,236.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,168,170,237.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,169,171,238.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,170,172,246.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,171,173,248.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,172,174,249.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,173,175,250.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,174,176,251.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,175,177,252.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,176,178,253.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,177,179,257.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,178,180,259.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,179,181,261.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,180,182,263.0,10.0,10.0
+train,sample_32,data/train/sample_32/Label-469 omali ej 03a.xlsx,181,183,265.0,10.0,10.0
+train,sample_39,data/train/sample_39/Label-604 dadban ej.xlsx,0,2,1.0,10.0,10.0
+train,sample_39,data/train/sample_39/Label-604 dadban ej.xlsx,7,9,8.0,10.0,10.0
+train,sample_39,data/train/sample_39/Label-604 dadban ej.xlsx,14,16,15.0,10.0,10.0
+train,sample_39,data/train/sample_39/Label-604 dadban ej.xlsx,15,17,16.0,10.0,10.0
+train,sample_39,data/train/sample_39/Label-604 dadban ej.xlsx,18,20,19.0,10.0,10.0
+train,sample_39,data/train/sample_39/Label-604 dadban ej.xlsx,19,21,20.0,10.0,10.0
+train,sample_39,data/train/sample_39/Label-604 dadban ej.xlsx,49,51,50.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,100,102,101.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,101,103,102.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,102,104,103.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,103,105,104.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,104,106,105.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,105,107,106.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,136,138,137.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,137,139,138.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,138,140,139.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,139,141,140.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,140,142,141.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,141,143,142.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,142,144,143.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,143,145,144.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,144,146,145.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,145,147,146.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,151,153,152.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,152,154,153.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,153,155,154.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,154,156,155.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,155,157,156.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,163,165,164.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,164,166,165.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,165,167,166.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,166,168,167.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,167,169,168.0,10.0,10.0
+train,sample_40,data/train/sample_40/Label-610 karimi ej1404.xlsx,168,170,169.0,10.0,10.0
+train,sample_44,data/train/sample_44/Label-79-maktabdar-tahereh abbasi.xlsx,45,47,46.0,5.0,5.0
+train,sample_44,data/train/sample_44/Label-79-maktabdar-tahereh abbasi.xlsx,46,48,47.0,5.0,5.0
+train,sample_44,data/train/sample_44/Label-79-maktabdar-tahereh abbasi.xlsx,47,49,48.0,5.0,5.0
+train,sample_44,data/train/sample_44/Label-79-maktabdar-tahereh abbasi.xlsx,98,100,107.0,5.0,5.0
+train,sample_44,data/train/sample_44/Label-79-maktabdar-tahereh abbasi.xlsx,99,101,108.0,5.0,5.0
+train,sample_44,data/train/sample_44/Label-79-maktabdar-tahereh abbasi.xlsx,118,120,127.0,5.0,5.0
+train,sample_44,data/train/sample_44/Label-79-maktabdar-tahereh abbasi.xlsx,157,159,166.0,5.0,5.0
+train,sample_44,data/train/sample_44/Label-79-maktabdar-tahereh abbasi.xlsx,160,162,170.0,5.0,5.0
+train,sample_44,data/train/sample_44/Label-79-maktabdar-tahereh abbasi.xlsx,211,213,233.0,5.0,5.0
+train,sample_44,data/train/sample_44/Label-79-maktabdar-tahereh abbasi.xlsx,224,226,246.0,5.0,5.0
+train,sample_44,data/train/sample_44/Label-79-maktabdar-tahereh abbasi.xlsx,225,227,247.0,5.0,5.0
+train,sample_44,data/train/sample_44/Label-79-maktabdar-tahereh abbasi.xlsx,226,228,248.0,5.0,5.0
+train,sample_44,data/train/sample_44/Label-79-maktabdar-tahereh abbasi.xlsx,227,229,249.0,5.0,5.0
+train,sample_44,data/train/sample_44/Label-79-maktabdar-tahereh abbasi.xlsx,228,230,250.0,5.0,5.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,0,2,5.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,2,4,8.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,13,15,20.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,46,48,56.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,162,164,187.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,163,165,189.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,164,166,190.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,165,167,191.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,166,168,192.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,207,209,265.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,208,210,267.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,209,211,268.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,210,212,269.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,211,213,270.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,212,214,271.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,213,215,273.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,214,216,274.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,215,217,275.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,216,218,276.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,217,219,278.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,218,220,281.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,219,221,282.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,220,222,283.0,10.0,10.0
+train,sample_6,data/train/sample_6/Label-13 kashanian ej 02.xlsx,221,223,284.0,10.0,10.0
+train,sample_71,data/train/sample_71/Label-Baha-o-ddini 03.xlsx,439,441,513.0,5.0,5.0
+train,sample_71,data/train/sample_71/Label-Baha-o-ddini 03.xlsx,440,442,515.0,5.0,5.0
+train,sample_71,data/train/sample_71/Label-Baha-o-ddini 03.xlsx,441,443,517.0,5.0,5.0
+train,sample_71,data/train/sample_71/Label-Baha-o-ddini 03.xlsx,442,444,519.0,5.0,5.0
+train,sample_71,data/train/sample_71/Label-Baha-o-ddini 03.xlsx,443,445,521.0,5.0,5.0
+train,sample_71,data/train/sample_71/Label-Baha-o-ddini 03.xlsx,444,446,523.0,5.0,5.0
+train,sample_71,data/train/sample_71/Label-Baha-o-ddini 03.xlsx,445,447,525.0,5.0,5.0
+train,sample_71,data/train/sample_71/Label-Baha-o-ddini 03.xlsx,446,448,528.0,5.0,5.0
+train,sample_71,data/train/sample_71/Label-Baha-o-ddini 03.xlsx,447,449,530.0,5.0,5.0
+train,sample_71,data/train/sample_71/Label-Baha-o-ddini 03.xlsx,448,450,532.0,5.0,5.0
+train,sample_71,data/train/sample_71/Label-Baha-o-ddini 03.xlsx,449,451,534.0,5.0,5.0
+train,sample_71,data/train/sample_71/Label-Baha-o-ddini 03.xlsx,450,452,536.0,5.0,5.0
+train,sample_71,data/train/sample_71/Label-Baha-o-ddini 03.xlsx,451,453,538.0,5.0,5.0
+train,sample_71,data/train/sample_71/Label-Baha-o-ddini 03.xlsx,452,454,540.0,5.0,5.0
+test,sample_10,data/test/sample_10/Label-401 jafari ej.xlsx,169,171,212.0,10.0,10.0
+test,sample_10,data/test/sample_10/Label-401 jafari ej.xlsx,170,172,213.0,10.0,10.0
+test,sample_10,data/test/sample_10/Label-401 jafari ej.xlsx,171,173,214.0,10.0,10.0
+test,sample_10,data/test/sample_10/Label-401 jafari ej.xlsx,172,174,215.0,10.0,10.0
+test,sample_11,data/test/sample_11/Label-481 barsam.xlsx,63,65,81.0,10.0,10.0
+test,sample_11,data/test/sample_11/Label-481 barsam.xlsx,64,66,83.0,10.0,10.0
+test,sample_11,data/test/sample_11/Label-481 barsam.xlsx,65,67,84.0,10.0,10.0
+test,sample_11,data/test/sample_11/Label-481 barsam.xlsx,70,72,89.0,10.0,10.0
+test,sample_11,data/test/sample_11/Label-481 barsam.xlsx,71,73,91.0,10.0,10.0
+test,sample_11,data/test/sample_11/Label-481 barsam.xlsx,72,74,92.0,10.0,10.0
+test,sample_11,data/test/sample_11/Label-481 barsam.xlsx,93,95,113.0,10.0,10.0
+test,sample_11,data/test/sample_11/Label-481 barsam.xlsx,95,97,115.0,10.0,10.0
+test,sample_13,data/test/sample_13/Label-603 shahidi ej.xlsx,176,178,177.0,10.0,10.0
+test,sample_13,data/test/sample_13/Label-603 shahidi ej.xlsx,177,179,179.0,10.0,10.0
+test,sample_13,data/test/sample_13/Label-603 shahidi ej.xlsx,178,180,180.0,10.0,10.0
+test,sample_13,data/test/sample_13/Label-603 shahidi ej.xlsx,179,181,181.0,10.0,10.0
+test,sample_13,data/test/sample_13/Label-603 shahidi ej.xlsx,180,182,182.0,10.0,10.0
+test,sample_13,data/test/sample_13/Label-603 shahidi ej.xlsx,181,183,183.0,10.0,10.0
+test,sample_13,data/test/sample_13/Label-603 shahidi ej.xlsx,182,184,184.0,10.0,10.0
+test,sample_13,data/test/sample_13/Label-603 shahidi ej.xlsx,222,224,225.0,10.0,10.0
+test,sample_13,data/test/sample_13/Label-603 shahidi ej.xlsx,224,226,227.0,10.0,10.0
+test,sample_13,data/test/sample_13/Label-603 shahidi ej.xlsx,225,227,228.0,10.0,10.0
+test,sample_13,data/test/sample_13/Label-603 shahidi ej.xlsx,226,228,229.0,10.0,10.0
+test,sample_13,data/test/sample_13/Label-603 shahidi ej.xlsx,227,229,230.0,10.0,10.0
+test,sample_13,data/test/sample_13/Label-603 shahidi ej.xlsx,228,230,231.0,10.0,10.0
+test,sample_13,data/test/sample_13/Label-603 shahidi ej.xlsx,229,231,232.0,10.0,10.0
+test,sample_14,data/test/sample_14/Label-Aghajani.xlsx,126,128,143.0,30.0,10.0
+test,sample_14,data/test/sample_14/Label-Aghajani.xlsx,127,129,144.0,30.0,10.0
+test,sample_14,data/test/sample_14/Label-Aghajani.xlsx,128,130,145.0,30.0,10.0
+test,sample_14,data/test/sample_14/Label-Aghajani.xlsx,129,131,146.0,30.0,10.0
+test,sample_14,data/test/sample_14/Label-Aghajani.xlsx,130,132,147.0,30.0,10.0
+test,sample_14,data/test/sample_14/Label-Aghajani.xlsx,131,133,148.0,30.0,10.0
+test,sample_14,data/test/sample_14/Label-Aghajani.xlsx,132,134,149.0,30.0,10.0
+test,sample_14,data/test/sample_14/Label-Aghajani.xlsx,133,135,150.0,30.0,10.0
+test,sample_14,data/test/sample_14/Label-Aghajani.xlsx,134,136,151.0,30.0,10.0
+test,sample_14,data/test/sample_14/Label-Aghajani.xlsx,135,137,152.0,30.0,10.0
+test,sample_14,data/test/sample_14/Label-Aghajani.xlsx,136,138,153.0,30.0,10.0
+test,sample_14,data/test/sample_14/Label-Aghajani.xlsx,137,139,154.0,30.0,10.0
+test,sample_14,data/test/sample_14/Label-Aghajani.xlsx,138,140,155.0,30.0,10.0
+test,sample_14,data/test/sample_14/Label-Aghajani.xlsx,139,141,156.0,30.0,10.0
+test,sample_14,data/test/sample_14/Label-Aghajani.xlsx,140,142,157.0,30.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,18,20,19.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,96,98,105.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,98,100,107.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,217,219,270.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,222,224,276.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,227,229,288.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,232,234,294.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,237,239,300.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,242,244,306.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,247,249,312.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,252,254,324.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,257,259,330.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,271,273,362.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,272,274,363.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,273,275,364.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,274,276,365.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,275,277,366.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,276,278,368.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,277,279,369.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,278,280,370.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,279,281,371.0,10.0,10.0
+test,sample_3,data/test/sample_3/Label-11 alavi -manoochehri ej.xlsx,280,282,372.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,363,365,364.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,364,366,365.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,365,367,366.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,366,368,367.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,367,369,368.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,368,370,369.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,369,371,370.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,370,372,371.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,371,373,372.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,372,374,373.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,373,375,374.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,374,376,375.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,375,377,376.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,376,378,377.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,416,418,417.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,417,419,418.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,418,420,419.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,419,421,420.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,420,422,421.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,421,423,422.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,422,424,423.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,423,425,424.0,10.0,10.0
+test,sample_56,data/test/sample_56/Label-moti 02.xlsx,424,426,425.0,10.0,10.0
+test,sample_58,data/test/sample_58/Label-trzvani ejraee 01.xlsx,229,231,264.0,10.0,10.0
+test,sample_58,data/test/sample_58/Label-trzvani ejraee 01.xlsx,230,232,265.0,10.0,10.0
+test,sample_58,data/test/sample_58/Label-trzvani ejraee 01.xlsx,231,233,266.0,10.0,10.0
+test,sample_58,data/test/sample_58/Label-trzvani ejraee 01.xlsx,232,234,267.0,10.0,10.0
+test,sample_58,data/test/sample_58/Label-trzvani ejraee 01.xlsx,233,235,268.0,10.0,10.0
+test,sample_58,data/test/sample_58/Label-trzvani ejraee 01.xlsx,234,236,269.0,10.0,10.0
+test,sample_58,data/test/sample_58/Label-trzvani ejraee 01.xlsx,235,237,270.0,10.0,10.0
+test,sample_58,data/test/sample_58/Label-trzvani ejraee 01.xlsx,236,238,282.0,10.0,10.0
+test,sample_58,data/test/sample_58/Label-trzvani ejraee 01.xlsx,237,239,283.0,10.0,10.0
+test,sample_58,data/test/sample_58/Label-trzvani ejraee 01.xlsx,238,240,284.0,10.0,10.0
+test,sample_58,data/test/sample_58/Label-trzvani ejraee 01.xlsx,239,241,285.0,10.0,10.0
+test,sample_58,data/test/sample_58/Label-trzvani ejraee 01.xlsx,240,242,286.0,10.0,10.0
+test,sample_58,data/test/sample_58/Label-trzvani ejraee 01.xlsx,241,243,287.0,10.0,10.0
+test,sample_58,data/test/sample_58/Label-trzvani ejraee 01.xlsx,242,244,288.0,10.0,10.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,69,71,73.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,73,75,77.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,78,80,82.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,82,84,86.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,87,89,91.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,91,93,95.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,96,98,100.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,97,99,101.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,101,103,105.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,104,106,109.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,108,110,113.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,113,115,118.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,117,119,122.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,126,128,131.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,131,133,136.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,135,137,140.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,140,142,145.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,141,143,147.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,142,144,148.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,143,145,149.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,168,170,185.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,173,175,190.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,177,179,194.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,182,184,199.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,186,188,203.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,190,192,207.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,195,197,212.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,204,206,221.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,209,211,226.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,213,215,230.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,216,218,233.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,222,224,239.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,227,229,244.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,231,233,248.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,236,238,253.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,240,242,257.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,245,247,262.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,249,251,266.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,254,256,271.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,258,260,275.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,261,263,278.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,263,265,280.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,264,266,281.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,265,267,282.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,266,268,283.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,267,269,284.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,268,270,285.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,269,271,286.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,270,272,287.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,271,273,288.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,272,274,289.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,273,275,290.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,274,276,291.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,275,277,292.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,276,278,293.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,277,279,294.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,278,280,295.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,279,281,296.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,280,282,297.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,281,283,298.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,282,284,299.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,283,285,300.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,284,286,301.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,285,287,302.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,286,288,303.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,291,293,308.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,292,294,309.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,293,295,310.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,295,297,312.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,296,298,313.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,297,299,314.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,298,300,315.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,299,301,316.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,300,302,317.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,301,303,318.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,302,304,319.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,303,305,320.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,304,306,321.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,305,307,322.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,306,308,323.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,318,320,335.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,320,322,337.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,322,324,339.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,324,326,341.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,326,328,343.0,5.0,5.0
+test,sample_7,data/test/sample_7/Label-20 mahmoodi  ej.xlsx,373,375,392.0,5.0,5.0
+test,sample_9,data/test/sample_9/Label-399 Alizade ej.xlsx,88,90,121.0,10.0,10.0
+test,sample_9,data/test/sample_9/Label-399 Alizade ej.xlsx,89,91,123.0,10.0,10.0
+test,sample_9,data/test/sample_9/Label-399 Alizade ej.xlsx,90,92,124.0,10.0,10.0
+test,sample_9,data/test/sample_9/Label-399 Alizade ej.xlsx,91,93,125.0,10.0,10.0
+test,sample_9,data/test/sample_9/Label-399 Alizade ej.xlsx,92,94,126.0,10.0,10.0
+test,sample_9,data/test/sample_9/Label-399 Alizade ej.xlsx,93,95,128.0,10.0,10.0
+test,sample_9,data/test/sample_9/Label-399 Alizade ej.xlsx,94,96,129.0,10.0,10.0
+test,sample_9,data/test/sample_9/Label-399 Alizade ej.xlsx,95,97,130.0,10.0,10.0
+test,sample_9,data/test/sample_9/Label-399 Alizade ej.xlsx,96,98,131.0,10.0,10.0
+test,sample_9,data/test/sample_9/Label-399 Alizade ej.xlsx,97,99,133.0,10.0,10.0
+test,sample_9,data/test/sample_9/Label-399 Alizade ej.xlsx,98,100,134.0,10.0,10.0
+test,sample_9,data/test/sample_9/Label-399 Alizade ej.xlsx,99,101,135.0,10.0,10.0
