@@ -540,6 +540,131 @@ class IsolatedNodeHandler:
 
 
 # ==================================================
+# IMPOSSIBLE-LABEL FILTER  (opt-in data cleaning)
+# ==================================================
+class ImpossibleLabelFilter:
+    """
+    OPT-IN cleaning step: drop beam/column nodes whose target section is
+    physically impossible for a real RC member -- i.e. the SMALLER side
+    min(b, h) <= `max_impossible_cm` (default 10 cm). On this dataset that is
+    exactly the 449 flagged labels (5x5, 10x10, 30x10); every legitimate size
+    (15, 20, 25 cm ...) is kept. These corrupt targets otherwise get fed to the
+    model as ground truth AND drag down the TargetNormalizer statistics, so
+    removing them helps both training and evaluation.
+
+    NOT part of the baseline pipeline and DISABLED by leaving it out. The
+    existing comparison runs (notebooks 5 & 6) never call this, so they stay
+    byte-for-byte identical. Apply it FIRST -- before IsolatedNodeHandler /
+    PositionalEncoder -- on the freshly-cloned RAW graphs, so isolation tags,
+    positional encodings and normalizer statistics are all computed on the
+    cleaned graph:
+
+        ImpossibleLabelFilter(max_impossible_cm=10).transform(graphs)  # then iso, PE, ...
+
+    Removing a node also drops every edge that touched it and re-indexes the
+    survivors (a node-induced subgraph). The .pt files and the source Excel are
+    NEVER modified -- filtering happens purely in-memory on the passed list.
+
+    Pass `enabled=False` to make it a no-op (handy for toggling from config
+    without changing the notebook structure). After `transform`, the counts are
+    available on `.n_removed` and `.n_removed_by_type`.
+    """
+
+    def __init__(self, max_impossible_cm: float = 10.0, enabled: bool = True,
+                 node_types: Optional[List[str]] = None, verbose: bool = False):
+        self.max_impossible_cm = float(max_impossible_cm)
+        self.enabled = enabled
+        self.node_types = node_types or ["beam", "column"]
+        self.verbose = verbose
+        self.n_removed = 0
+        self.n_removed_by_type: Dict[str, int] = {}
+
+    # ------------------------------------------------------------------ #
+    def transform(self, graphs: List) -> List:
+        if not self.enabled:
+            return graphs
+        self.n_removed = 0
+        self.n_removed_by_type = {nt: 0 for nt in self.node_types}
+        for g in graphs:
+            if getattr(g, "_impossible_filtered", False):
+                continue
+            keep = self._keep_masks(g)
+            self._apply(g, keep)
+            g._impossible_filtered = True
+        if self.verbose:
+            logger.info(
+                f"ImpossibleLabelFilter removed {self.n_removed} nodes "
+                f"(min(b,h) <= {self.max_impossible_cm} cm): {self.n_removed_by_type}"
+            )
+        return graphs
+
+    # ------------------------------------------------------------------ #
+    def _keep_masks(self, g) -> Dict[str, torch.Tensor]:
+        """Per node type: True = keep (min(b,h) strictly above threshold)."""
+        keep = {}
+        for nt in self.node_types:
+            if nt not in g.node_types:
+                continue
+            store = g[nt]
+            if not hasattr(store, "y") or store.y is None or store.y.numel() == 0:
+                continue
+            smaller = store.y.min(dim=1).values          # min(b, h) per node
+            keep[nt] = smaller > self.max_impossible_cm  # keep the good ones
+        return keep
+
+    # ------------------------------------------------------------------ #
+    def _apply(self, g, keep: Dict[str, torch.Tensor]):
+        # 1) build old->new index maps and subset the surviving nodes
+        remap = {}   # nt -> new_idx tensor (len n_old, -1 for removed) or None
+        for nt, m in keep.items():
+            n_old = int(m.shape[0])
+            removed = int((~m).sum().item())
+            if removed == 0:
+                remap[nt] = None
+                continue
+            self.n_removed += removed
+            self.n_removed_by_type[nt] = self.n_removed_by_type.get(nt, 0) + removed
+            new_idx = torch.full((n_old,), -1, dtype=torch.long)
+            new_idx[m] = torch.arange(int(m.sum().item()), dtype=torch.long)
+            remap[nt] = new_idx
+            self._subset_node_store(g[nt], m)
+
+        # 2) rebuild every edge that references a remapped node type
+        for et in list(g.edge_types):
+            s, _, d = et
+            s_new, d_new = remap.get(s), remap.get(d)
+            if s_new is None and d_new is None:
+                continue
+            ei = getattr(g[et], "edge_index", None)
+            if ei is None or ei.numel() == 0:
+                continue
+            src, dst = ei[0], ei[1]
+            mask = torch.ones(ei.shape[1], dtype=torch.bool)
+            if s_new is not None:
+                mask &= (s_new[src] >= 0)
+            if d_new is not None:
+                mask &= (d_new[dst] >= 0)
+            src, dst = src[mask], dst[mask]
+            if s_new is not None:
+                src = s_new[src]
+            if d_new is not None:
+                dst = d_new[dst]
+            g[et].edge_index = torch.stack([src, dst], dim=0)
+
+    # ------------------------------------------------------------------ #
+    @staticmethod
+    def _subset_node_store(store, m: torch.Tensor):
+        """Keep rows `m` of every per-node tensor (x, y, pos, ...) on the store."""
+        n_old = int(m.shape[0])
+        for key, val in list(store.items()):
+            if torch.is_tensor(val) and val.dim() >= 1 and val.shape[0] == n_old:
+                store[key] = val[m]
+        # keep an explicit num_nodes in sync if one was stored (else PyG infers it)
+        if "num_nodes" in store:
+            store.num_nodes = int(m.sum().item())
+
+
+# ==================================================
 # TARGET NORMALIZER  (scales y = [width, height])
 # ==================================================
 class TargetNormalizer:
