@@ -1,0 +1,10 @@
+combo,beam_conn_MAE,beam_conn_n,beam_iso_MAE,beam_iso_n,col_conn_MAE,col_conn_n,col_iso_MAE,col_iso_n
+topological_none,5.54,5134,4.537,429,6.287,2670,13.833,2
+topological_self_loop,5.397,5134,4.608,429,6.029,2670,12.523,2
+topological_knn,5.356,5134,4.529,429,6.039,2670,17.269,2
+geometric_none,5.597,5134,4.568,429,6.112,2670,14.932,2
+geometric_self_loop,5.344,5134,4.422,429,6.214,2670,20.301,2
+geometric_knn,5.495,5134,4.575,429,6.193,2670,18.5,2
+hybrid_none,5.449,5134,4.498,429,6.209,2670,16.579,2
+hybrid_self_loop,5.39,5134,4.778,429,5.962,2670,14.526,2
+hybrid_knn,5.367,5134,4.55,429,5.957,2670,18.97,2
